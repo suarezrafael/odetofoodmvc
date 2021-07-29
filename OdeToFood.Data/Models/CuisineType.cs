@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace OdeToFood.Data.Models
 {
-    public class CuisineType
+    public enum CuisineType
     {
+        None,
+        Italian,
+        Indian,
+        French
     }
 }
