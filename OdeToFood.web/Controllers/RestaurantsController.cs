@@ -37,12 +37,30 @@ namespace OdeToFood.web.Controllers
         {
             return View();
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Restaurant restaurant)
         {
-            db.Add(restaurant);
+            if (ModelState.IsValid)
+            {
+                db.Add(restaurant);
+                return RedirectToAction("Details", new { id = restaurant.Id });
+            }
             return View();
         }
+
+        public ActionResult Edit(int id)
+        {
+            var model = db.Get(id);
+
+            if(model == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(model);
+        }
     }
+
 }
