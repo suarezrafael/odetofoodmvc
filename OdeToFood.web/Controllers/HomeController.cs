@@ -9,14 +9,14 @@ namespace OdeToFood.web.Controllers
 {
     public class HomeController : Controller
     {
-        IRestaurantData _restaurantData;
-        public HomeController( )
+        IRestaurantData _db;
+        public HomeController(IRestaurantData db)
         {
-            _restaurantData = new InMemoryRestaurantData();
+            _db = new InMemoryRestaurantData();
         }
         public ActionResult Index()
         {
-            var model = _restaurantData.GetAll();
+            var model = _db.GetAll();
             return View(model);
         }
 
