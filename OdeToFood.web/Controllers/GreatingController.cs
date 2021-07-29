@@ -11,9 +11,13 @@ namespace OdeToFood.web.Controllers
     public class GreatingController : Controller
     {
         // GET: Greating
-        public ActionResult Index()
+        public ActionResult Index(string name)
         {
-            var model = new GreatingViewModel() { Message = ConfigurationManager.AppSettings["message"]};
+            var model = new GreatingViewModel() { 
+                Message = ConfigurationManager.AppSettings["message"],
+                Name = name ?? "no name"
+            };
+            
             return View(model);
         }
     }
