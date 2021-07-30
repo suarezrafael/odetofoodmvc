@@ -8,6 +8,14 @@ namespace OdeToFood.web
         // Para obter mais informações sobre o agrupamento, visite https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            //bundles.Add(new ScriptBundle("~/bundles/mybundle").Include(
+            //   "~/Resources/Core/Javascripts/jquery-1.7.1.min.js",
+            //   "~/Resources/Core/Javascripts/jquery-ui-1.8.16.min.js",
+            //   "~/Resources/Core/Javascripts/jquery.validate.min.js",
+            //   "~/Resources/Core/Javascripts/jquery.validate.unobtrusive.min.js",
+            //   "~/Resources/Core/Javascripts/jquery.unobtrusive-ajax.min.js",
+            //   "~/Resources/Core/Javascripts/jquery-ui-timepicker-addon.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 

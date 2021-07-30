@@ -12,7 +12,7 @@ namespace OdeToFood.web.Controllers
         IRestaurantData _db;
         public HomeController(IRestaurantData db)
         {
-            _db = new InMemoryRestaurantData();
+            _db = db;
         }
         public ActionResult Index()
         {
@@ -22,16 +22,24 @@ namespace OdeToFood.web.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Restaurant Register ASP NET MVC5 Application. Injection Dependency Autofac.Mvc5";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contato para entrevista:";
 
             return View();
         }
+
+        public ActionResult Account()
+        {
+            ViewBag.Message = "AccountTeste.";
+
+            return View();
+        }
+
     }
 }
