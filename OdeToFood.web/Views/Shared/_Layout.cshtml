@@ -31,11 +31,19 @@
         </div>
     </div>
     <div class="container body-content">
+
+        @if (TempData["Message"] != null)
+        {
+            <br />
+            <div class="alert alert-info">
+                @TempData["Message"]
+            </div>
+        }
         @RenderBody()
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - Restaurant Register ASP.NET</p>
-            @RenderSection("footer",required:false)
+            @RenderSection("footer", required: false)
         </footer>
     </div>
 
